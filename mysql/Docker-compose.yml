@@ -1,0 +1,14 @@
+version: '3'
+services:
+  devengo_api_db:
+    image: mysql:8.0.28-oracle
+    restart: always
+    ports:
+      - "3306:3306"
+      - "33060:33060"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - mysql-data:/var/lib/mysql
+volumes:
+  mysql-data:
